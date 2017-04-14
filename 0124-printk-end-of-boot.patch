@@ -1,0 +1,24 @@
+From cfa49b2ffdb954000e3a9f39713d4fb3cf64b702 Mon Sep 17 00:00:00 2001
+From: Arjan van de Ven <arjan@linux.intel.com>
+Date: Sat, 11 Jun 2016 22:12:51 +0000
+Subject: [PATCH 25/31] printk end of boot
+
+---
+ init/main.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/init/main.c b/init/main.c
+index 819eec0e..8731f038 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -974,6 +974,7 @@ static int __ref kernel_init(void *unused)
+ 		       ramdisk_execute_command, ret);
+ 	}
+ 
++	printk(KERN_ERR "Executing init\n");
+ 	/*
+ 	 * We try each of these until one succeeds.
+ 	 *
+-- 
+2.12.0
+

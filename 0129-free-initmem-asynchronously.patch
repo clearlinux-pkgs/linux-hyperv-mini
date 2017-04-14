@@ -1,0 +1,39 @@
+From 26e5e38a7e42c631d39dfdacdc6f66beb9333ae9 Mon Sep 17 00:00:00 2001
+From: Arjan van de Ven <arjan@linux.intel.com>
+Date: Thu, 4 Aug 2016 18:07:50 +0000
+Subject: [PATCH 30/31] free initmem asynchronously
+
+---
+ init/main.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/init/main.c b/init/main.c
+index 8731f038..b90645ac 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -952,6 +952,12 @@ static inline void mark_readonly(void)
+ }
+ #endif
+ 
++static void async_free_initmem(void *data, async_cookie_t cookie)
++{
++	free_initmem();
++	mark_readonly();
++}
++
+ static int __ref kernel_init(void *unused)
+ {
+ 	int ret;
+@@ -959,8 +965,7 @@ static int __ref kernel_init(void *unused)
+ 	kernel_init_freeable();
+ 	/* need to finish all async __init code before freeing the memory */
+ 	async_synchronize_full();
+-	free_initmem();
+-	mark_readonly();
++	async_schedule(async_free_initmem, NULL);
+ 	system_state = SYSTEM_RUNNING;
+ 	numa_default_policy();
+ 
+-- 
+2.12.0
+
