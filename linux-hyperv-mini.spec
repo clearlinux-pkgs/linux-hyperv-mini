@@ -6,7 +6,7 @@
 
 Name:           linux-hyperv-mini
 Version:        4.11.0
-Release:        2
+Release:        3
 License:        GPL-2.0
 Summary:        The Linux kernel optimized for running inside Hyper-V
 Url:            http://www.kernel.org/
@@ -142,7 +142,7 @@ BuildKernel() {
     MakeTarget=$1
 
     Arch=x86_64
-    ExtraVer="-%{release}.hyperv-initrd"
+    ExtraVer="-%{release}.hyperv-mini"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
