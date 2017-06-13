@@ -35,6 +35,20 @@ BuildRequires:  kmod
 #    000X: cve, bugfixes patches
 
 #    00XY: Mainline patches, upstream backports
+Patch0001: 0001-vmbus-vmbus_open-reset-onchannel_callback-on-error.patch
+Patch0002: 0002-vmbus-add-the-matching-tasklet_enable-in-vmbus_close.patch
+Patch0003: 0003-vmbus-remove-goto-error_clean_msglist-in-vmbus_open.patch
+Patch0004: 0004-vmbus-dynamically-enqueue-dequeue-a-channel-on-vmbus.patch
+Patch0005: 0005-hv_sock-implements-Hyper-V-transport-for-Virtual-Soc.patch
+Patch0006: 0006-VMCI-only-try-to-load-on-VMware-hypervisor.patch
+Patch0007: 0007-hv_sock-add-the-support-of-auto-loading.patch
+Patch0008: 0008-tools-hv_sock-2-simple-test-cases.patch
+Patch0009: 0009-vmbus-introduce-in-place-packet-iterator.patch
+Patch0010: 0010-hvsock-fix-a-race-in-hvs_stream_dequeue.patch
+Patch0011: 0011-hvsock-fix-vsock_dequeue-enqueue_accept-race.patch
+Patch0012: 0012-Drivers-hv-vmbus-Fix-rescind-handling.patch
+Patch0013: 0013-vmbus-fix-hv_percpu_channel_deq-enq-race.patch
+Patch0014: 0014-vmbus-add-vmbus-onoffer-onoffer_rescind-sync.patch
 
 # Serie    01XX: Clear Linux patches
 Patch0101: 0101-init-don-t-wait-for-PS-2-at-boot.patch
@@ -93,6 +107,20 @@ Linux kernel extra files
 #     000X  cve, bugfixes patches
 
 #     00XY  Mainline patches, upstream backports
+%patch0001 -p1
+%patch0002 -p1
+%patch0003 -p1
+%patch0004 -p1
+%patch0005 -p1
+%patch0006 -p1
+%patch0007 -p1
+%patch0008 -p1
+%patch0009 -p1
+%patch0010 -p1
+%patch0011 -p1
+%patch0012 -p1
+%patch0013 -p1
+%patch0014 -p1
 
 #     01XX  Clear Linux patches
 %patch0101 -p1
