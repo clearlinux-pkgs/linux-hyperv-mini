@@ -11,11 +11,11 @@ License:        GPL-2.0
 Summary:        The Linux kernel optimized for running inside Hyper-V
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.11-rc2.tar.xz
+Source0:        https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.11.tar.xz
 Source1:        config
 Source2:        cmdline
 
-%define kversion 4.11.0-%{release}.hyperv-mini
+%define kversion %{version}-%{release}.hyperv-mini
 
 BuildRequires:  bash >= 2.03
 BuildRequires:  bc
@@ -35,7 +35,6 @@ BuildRequires:  kmod
 #    000X: cve, bugfixes patches
 
 #    00XY: Mainline patches, upstream backports
-Patch0011: 0011-Patch-for-Intel-Clear-Container-building-purpose.patch
 
 # Serie    01XX: Clear Linux patches
 Patch0101: 0101-init-don-t-wait-for-PS-2-at-boot.patch
@@ -89,12 +88,11 @@ Group:          kernel
 Linux kernel extra files
 
 %prep
-%setup -q -n linux-4.11-rc2
+%setup -q -n linux-4.11
 
 #     000X  cve, bugfixes patches
 
 #     00XY  Mainline patches, upstream backports
-%patch0011 -p1
 
 #     01XX  Clear Linux patches
 %patch0101 -p1
