@@ -67,7 +67,6 @@ Patch0113: 0113-overload-on-wakeup.patch
 Patch0114: 0114-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch
 Patch0115: 0115-fix-initcall-timestamps.patch
 Patch0116: 0116-smpboot-reuse-timer-calibration.patch
-Patch0117: 0117-raid6-add-Kconfig-option-to-skip-raid6-benchmarking.patch
 Patch0118: 0118-Initialize-ata-before-graphics.patch
 Patch0119: 0119-reduce-e1000e-boot-time-by-tightening-sleep-ranges.patch
 Patch0120: 0120-Skip-synchronize_rcu-on-single-CPU-systems.patch
@@ -139,7 +138,6 @@ Linux kernel extra files
 %patch0114 -p1
 %patch0115 -p1
 %patch0116 -p1
-%patch0117 -p1
 %patch0118 -p1
 %patch0119 -p1
 %patch0120 -p1
