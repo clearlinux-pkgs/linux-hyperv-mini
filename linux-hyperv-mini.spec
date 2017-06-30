@@ -49,6 +49,9 @@ Patch0011: 0011-hvsock-fix-vsock_dequeue-enqueue_accept-race.patch
 Patch0012: 0012-Drivers-hv-vmbus-Fix-rescind-handling.patch
 Patch0013: 0013-vmbus-fix-hv_percpu_channel_deq-enq-race.patch
 Patch0014: 0014-vmbus-add-vmbus-onoffer-onoffer_rescind-sync.patch
+Patch0015: 0015-hv-sock-a-temporary-workaround-for-the-pending_send_.patch
+Patch0016: 0016-vmbus-fix-the-missed-signaling-in-hv_signal_on_read.patch
+
 
 # Serie    01XX: Clear Linux patches
 Patch0101: 0101-init-don-t-wait-for-PS-2-at-boot.patch
@@ -120,6 +123,8 @@ Linux kernel extra files
 %patch0012 -p1
 %patch0013 -p1
 %patch0014 -p1
+%patch0015 -p1
+%patch0016 -p1
 
 #     01XX  Clear Linux patches
 %patch0101 -p1
