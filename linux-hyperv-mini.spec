@@ -6,7 +6,7 @@
 
 Name:           linux-hyperv-mini
 Version:        4.11.8
-Release:        9
+Release:        10
 License:        GPL-2.0
 Summary:        The Linux kernel optimized for running inside Hyper-V
 Url:            http://www.kernel.org/
